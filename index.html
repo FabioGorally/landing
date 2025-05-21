@@ -4,29 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Landing</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="section-one">
-      <div class="main-title">
-        <span>Лэндинг от искусственного интеллекта за 5 минут и 4 990 р. </span>
-        <p>Оплата после создания</p>
+      <div class="main-title item-1">
+        <span class="main-title__text"
+          ><strong>Лэндинг</strong><br> от искусственного интеллекта <br>за 5 минут и 4
+          990 р.</span>
+        <p class="main-title__describe">Оплата после создания</p>
         <div class="navigation-links">
-          <div class="link-to-video">
-            <img src="" alt="" class="icon" />
-            <span>Посмотреть видео</span>
-          </div>
-          <div class="button">Попробовать бесплатно</div>
+          <button class="navigation-links__btn-video btn">
+            <img src="assets/Icon.png" alt="иконка плей" /> Посмотреть видео
+          </button>
+          <button class="navigation-links__btn-try btn">
+            Попробовать бесплатно <span class="arrow">&rarr;</span>
+          </button>
         </div>
       </div>
-      <div class="iphone">
-        <img src="" alt="" />
+      <div class="iphone item-2">
+        <img src="assets/iPhoneXR.png" alt="Айфон" class="background-image" />
+        <img src="assets/sphere.png" alt="Шар" class="overlay-image" />
       </div>
-      <div class="video">
-        <span class="video-title"></span>
-        <img src="" alt="" class="video-player" />
+      <div class="video item-3">
+        <span class="video__title"><strong>Видеоинструкция</strong></span>
+        <img src="assets/video.jpg" alt="#" class="video__player" />
       </div>
     </div>
   </body>
