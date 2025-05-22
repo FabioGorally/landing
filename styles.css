@@ -9,6 +9,11 @@ body {
     color: #0F172A;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Стили для первой секции */
 .section-one {
     display: grid;
@@ -129,3 +134,55 @@ body {
     margin-left: 4px;
 }
 
+
+/* Стили для второй секции */
+
+.blocks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+
+.section-two__title {
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 62px;
+    letter-spacing: -2%;
+}
+
+.section-two__item {
+    display: flex;
+    flex-direction: column;
+    max-width: 384px;
+    max-height: 501px;
+    margin: 24px;
+}
+
+.item-text1 {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #6183e4;
+    margin-top: 32px;
+}
+
+.item-text2 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+    color: #101828;
+    margin-top: 12px;
+}
+
+.item-text3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #667085;
+    margin-top: 12px;
+}
+
+.icon-arrow {
+    margin-left: 180px;
+}
