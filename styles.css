@@ -86,6 +86,9 @@ body {
     position: relative;
     width: 400px;
     height: 800px;
+    display: block; /* На десктопе виден */
+    background-image: none; /* Убедимся, что у него нет фона на десктопе */
+    z-index: 1; 
 }
 
 .backgroud-image {
@@ -123,6 +126,7 @@ body {
 .video {
     display: flex;
     flex-direction: column;
+    background-color: transparent; 
 }
 
 .video__title {
