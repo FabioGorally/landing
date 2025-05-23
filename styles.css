@@ -33,6 +33,12 @@ body {
 
 .main-title {
     max-width: 774px;
+    color: #0F172A; 
+    text-shadow: none;
+    position: static; /* Возвращаем стандартное позиционирование на десктопе */
+    top: auto;
+    left: auto;
+    transform: none;
 }
 
 .main-title__text {
@@ -79,6 +85,10 @@ body {
   display: flex;
   gap: 15px;
   margin-top: 64px;
+  position: static; /* Возвращаем стандартное позиционирование на десктопе */
+  top: auto;
+  left: auto;
+  transform: none;
 }
 
 /* Я этого айфона картинки маму ел заебал меня  */
@@ -111,6 +121,7 @@ body {
     width: 388px; 
     height: 388px;
     object-fit: contain;
+    display: block;
 }
 
 .item-2 {      
@@ -300,8 +311,6 @@ body {
 }
 
 
-
-
 @media screen and (max-width: 768px) {
     .main {
         padding: 0 15px;
@@ -309,72 +318,102 @@ body {
 
     /* Секция 1 */
     .section-one {
-        display: flex; /* Переключаем на flexbox */
-        flex-direction: column; /* Элементы в столбец */
+        display: flex; /* Flexbox для вертикального расположения элементов */
+        flex-direction: column;
         align-items: center; /* Центрируем по горизонтали */
-        justify-content: flex-start; /* Элементы будут выравниваться от начала */
+        justify-content: flex-start; /* Выравниваем сверху */
         
-        margin-top: 40px; /* Уменьшаем отступ сверху */
-        margin-left: 0; /* Убираем левый отступ */
-        gap: 0; /* Отступы между элементами будем контролировать внутри */
-        padding: 0 15px; /* Горизонтальные отступы */
-
-        /* !!! ФОНОВОЕ ИЗОБРАЖЕНИЕ ДЛЯ item-1 и item-2 через section-one !!! */
-        background-image: url('assets/iPhoneXR.png'); /* Путь к картинке */
-        background-size: contain; /* Или cover */
-        background-repeat: no-repeat;
-        background-position: center top; /* Размещаем сверху по центру */
-        min-height: 700px; /* Увеличим min-height, чтобы фон был достаточно виден */
-        position: relative;
+        margin-top: 40px; 
+        margin-left: 0;
+        gap: 0;
+        padding: 0 15px;
+        
+        background-image: none; /* Нет фона у section-one */
+        background-color: #f8f8f8; /* Светлый фон, как на образце */
+        min-height: auto; 
+        padding-bottom: 30px; 
+        position: relative; /* Важно, чтобы .main-title и .nav могли позиционироваться относительно него */
     }
 
     /* main-title (item-1) */
     .main-title {
-        max-width: 100%;
+        max-width: 250px; /* Ограничим ширину, чтобы вписывался в айфон */
         text-align: center;
-        color: white; /* Цвет текста для лучшей читаемости на фоне */
-        text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* Тень для контраста */
-        z-index: 2; /* Чтобы текст был поверх фона и айфона */
-        padding-top: 80px; /* Дополнительный отступ сверху, чтобы не наезжать на фон */
-        margin-bottom: 20px; /* Отступ от айфона */
+        color: #0F172A; /* Цвет текста, как на образце */
+        text-shadow: none; 
+        z-index: 3; /* Сверху всего */
+        position: absolute; /* Абсолютное позиционирование */
+        top: 100px; /* Сдвигаем вниз, чтобы попасть на айфон */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translateX(-50%); /* Точное центрирование */
+        padding: 0; /* Уберем лишние отступы */
+        margin: 0;
     }
 
     .main-title__text {
-        font-size: 38px;
+        font-size: 28px; /* Уменьшим размер текста, чтобы он поместился */
         line-height: 1.2;
     }
 
     .main-title__describe {
-        font-size: 16px;
+        font-size: 14px; /* Уменьшим размер */
         line-height: 1.5;
-        margin-top: 16px;
-        color: #ddd;
+        margin-top: 8px; /* Уменьшим отступ */
+        color: #667085; /* Более темный для контраста */
     }
 
+    /* nav (кнопки) */
     .nav {
         flex-direction: column;
-        gap: 15px;
-        margin-top: 30px;
-        width: 100%;
+        gap: 10px; /* Уменьшим зазор между кнопками */
+        width: 250px; /* Ограничим ширину, чтобы вписывался в айфон */
         align-items: center;
-        z-index: 2; /* Чтобы кнопки были поверх фона */
+        z-index: 3; /* Сверху всего */
+        position: absolute; /* Абсолютное позиционирование */
+        top: 300px; /* Сдвигаем вниз, чтобы попасть на айфон */
+        left: 50%; /* Центрируем по горизонтали */
+        transform: translateX(-50%); /* Точное центрирование */
+        margin: 0; /* Уберем лишние отступы */
     }
 
     .nav__btn-video, .nav__btn-try {
         margin-right: 0;
-        width: 100%;
-        max-width: 280px;
-        height: 48px;
+        width: 100%; /* Кнопки занимают всю доступную ширину nav */
+        max-width: 240px; /* Максимальная ширина кнопки */
+        height: 44px; /* Чуть меньше высота */
     }
+    
+    /* Стили кнопок, как на образце */
+    .nav__btn-video {
+        background-color: transparent;
+        color: #337ab7; /* Синий цвет как на образце */
+        font-size: 14px;
+    }
+    .nav__btn-try {
+        background-color: #ffc107; /* Желтый цвет как на образце */
+        color: #333;
+        font-size: 14px;
+        padding: 0 15px; /* Корректируем padding */
+    }
+
 
     /* iphone (item-2) */
     .iphone {
-        display: block; /* Айфон остается видимым */
-        width: 250px; /* Уменьшаем размер */
-        height: 500px; /* Пропорционально уменьшаем */
-        margin-top: 30px; /* Отступ от main-title */
-        z-index: 2; /* Чтобы был поверх фона */
-        /* background-image: url('assets/iPhoneXR.png'); */ /* НЕ ДУБЛИРУЕМ ФОН, он уже на .section-one */
+        display: block; /* Видим как блок */
+        width: 300px; /* Ширина айфона, как на образце */
+        height: 600px; /* Высота айфона */
+        margin-top: 0; /* Убираем отступ, так как он позиционируется */
+        z-index: 2; /* Под текстом и кнопками */
+        position: relative; /* Важно, чтобы фоновая картинка позиционировалась внутри него */
+        
+        background-image: url('assets/iPhoneXR.png'); /* Фоновое изображение айфона */
+        background-size: contain; 
+        background-repeat: no-repeat;
+        background-position: center center; /* Центрируем картинку внутри блока */
+        background-color: transparent; /* Убедимся, что нет своего цвета */
+
+        /* НЕ ДОБАВЛЯЕМ PADDING здесь, т.к. текст позиционируется отдельно */
+        padding: 0;
     }
     
     /* Скрываем оригинальное изображение iPhoneXR.png внутри iphone */
@@ -382,26 +421,24 @@ body {
         display: none; 
     }
 
+    /* overlay-image тоже скрываем */
     .overlay-image {
-        top: 60%; /* Корректируем положение для уменьшенного айфона */
-        left: 50%;
-        width: 180px; /* Уменьшаем размер */
-        height: 180px;
+        display: none;
     }
 
     /* video (item-3) */
     .video {
-        display: flex; /* Видео остается видимым */
+        display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%; /* Занимает всю доступную ширину */
-        max-width: 600px; /* Ограничиваем максимальную ширину */
-        padding: 20px 15px; /* Внутренние отступы */
-        margin-top: 50px; /* Отступ от айфона */
-        background-color: #f8f8f8; /* Добавляем свой фон, чтобы не просвечивал background-image от section-one */
-        border-radius: 10px; /* Скругляем углы */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Легкая тень */
-        z-index: 1; /* Может быть не нужен, но на всякий случай */
+        width: 100%;
+        max-width: 600px;
+        padding: 20px 15px;
+        margin-top: 60px; /* Отступ от блока айфона */
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        z-index: 1;
     }
 
     .video__title {
@@ -419,7 +456,7 @@ body {
         margin-left: 0;
     }
 
-    /* Секция 2 */
+    /* Секция 2 и 3 - без изменений в этой итерации */
     .section-two__title {
         font-size: 38px;
         line-height: 1.2;
@@ -452,11 +489,14 @@ body {
         margin-top: 10px;
     }
 
-    /* Секция 3 */
     .section-three {
         padding: 40px 15px;
         min-height: auto;
         background-position: center top;
+        /* Убираем лишние свойства из .section-three на мобильных, если они конфликтуют */
+        background-size: cover; /* Снова используем cover, так как было предупреждение */
+        background-repeat: no-repeat;
+        background-position: center center;
     }
 
     .section-three__title {
@@ -495,6 +535,7 @@ body {
         margin-bottom: 50px;
     }
 }
+
 
 @media screen and (max-width: 480px) {
     .main-title__text {
