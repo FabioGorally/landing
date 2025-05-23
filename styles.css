@@ -60,13 +60,13 @@ body {
 .nav__btn-video {
   background-color: transparent;
   color: #007bff;
+  margin-right: 42px;
 }
 
 .nav__btn-try {
   background-color: #ffcc00;
   color: #333;
   padding: 0 24px;
-  margin-left: 42px;
 }
 
 .nav {
@@ -132,6 +132,8 @@ body {
     height: 411px;
     margin-top: 22px;
     margin-left: 4px;
+    border: none;
+    border-radius: 10px;
 }
 
 
@@ -193,4 +195,93 @@ body {
 
 .icon-arrow {
     margin-left: 140px;
+}
+
+/* Стили для третей секции */
+
+.section-three {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #010101;
+    background-image: url(assets/background_page3.png);
+    background-size: 1920px 525px;
+    background-repeat: no-repeat;
+}
+
+.section-three__title {
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 62px;
+    letter-spacing: -2%;
+    color: #ffffff;
+    margin-top: 63px;
+    margin-bottom: 66px;
+}
+
+.prices {
+    display: flex;
+    flex-direction: row;
+}
+
+.prices__card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    color: #090a0a;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 306px;
+    margin: 10px;
+    border: none;
+    border-radius: 16px;
+}
+
+.card__subtitle {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.card__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    margin-top: 8px;
+}
+
+.card__price {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -4%;
+    margin-top: 12px;
+}
+
+.card__price-small {
+    font-size: 28px;
+}
+
+.card__description {
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 12px;
+}
+
+.card__btn {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #ffffff;
+    background-color: #6183e4;
+    margin-top: 44px;
+    padding: 16px 96px;
+    border: none;
+    border-radius: 48px;
+    cursor: pointer;
+}
+
+.end-btn {
+    margin-top: 63px;
+    margin-bottom: 71px;
 }
