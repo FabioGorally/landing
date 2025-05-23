@@ -13,6 +13,8 @@ body {
 .main {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    max-width: 1440px; 
 }
 
 /* Стили для первой секции */
@@ -24,6 +26,9 @@ body {
     gap: 20px;
     margin-top: 180px;
     margin-left: 100px;
+    background-image: none; 
+    background-color: transparent;
+    position: relative;
 }
 
 .main-title {
@@ -206,9 +211,9 @@ body {
     align-items: center;
     background-color: #010101;
     background-image: url(assets/background_page3.png);
-    background-size: contain;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .section-three__title {
@@ -224,6 +229,8 @@ body {
 .prices {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .prices__card {
@@ -286,4 +293,230 @@ body {
 .end-btn {
     margin-top: 63px;
     margin-bottom: 71px;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 0 15px;
+    }
+
+    /* Секция 1 */
+    .section-one {
+        display: flex; /* Переключаем на flexbox */
+        flex-direction: column; /* Элементы в столбец */
+        align-items: center; /* Центрируем по горизонтали */
+        justify-content: flex-start; /* Элементы будут выравниваться от начала */
+        
+        margin-top: 40px; /* Уменьшаем отступ сверху */
+        margin-left: 0; /* Убираем левый отступ */
+        gap: 0; /* Отступы между элементами будем контролировать внутри */
+        padding: 0 15px; /* Горизонтальные отступы */
+
+        /* !!! ФОНОВОЕ ИЗОБРАЖЕНИЕ ДЛЯ item-1 и item-2 через section-one !!! */
+        background-image: url('assets/iPhoneXR.png'); /* Путь к картинке */
+        background-size: contain; /* Или cover */
+        background-repeat: no-repeat;
+        background-position: center top; /* Размещаем сверху по центру */
+        min-height: 700px; /* Увеличим min-height, чтобы фон был достаточно виден */
+        position: relative;
+    }
+
+    /* main-title (item-1) */
+    .main-title {
+        max-width: 100%;
+        text-align: center;
+        color: white; /* Цвет текста для лучшей читаемости на фоне */
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* Тень для контраста */
+        z-index: 2; /* Чтобы текст был поверх фона и айфона */
+        padding-top: 80px; /* Дополнительный отступ сверху, чтобы не наезжать на фон */
+        margin-bottom: 20px; /* Отступ от айфона */
+    }
+
+    .main-title__text {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    .main-title__describe {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 16px;
+        color: #ddd;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+        width: 100%;
+        align-items: center;
+        z-index: 2; /* Чтобы кнопки были поверх фона */
+    }
+
+    .nav__btn-video, .nav__btn-try {
+        margin-right: 0;
+        width: 100%;
+        max-width: 280px;
+        height: 48px;
+    }
+
+    /* iphone (item-2) */
+    .iphone {
+        display: block; /* Айфон остается видимым */
+        width: 250px; /* Уменьшаем размер */
+        height: 500px; /* Пропорционально уменьшаем */
+        margin-top: 30px; /* Отступ от main-title */
+        z-index: 2; /* Чтобы был поверх фона */
+        /* background-image: url('assets/iPhoneXR.png'); */ /* НЕ ДУБЛИРУЕМ ФОН, он уже на .section-one */
+    }
+    
+    /* Скрываем оригинальное изображение iPhoneXR.png внутри iphone */
+    .backgroud-image {
+        display: none; 
+    }
+
+    .overlay-image {
+        top: 60%; /* Корректируем положение для уменьшенного айфона */
+        left: 50%;
+        width: 180px; /* Уменьшаем размер */
+        height: 180px;
+    }
+
+    /* video (item-3) */
+    .video {
+        display: flex; /* Видео остается видимым */
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Занимает всю доступную ширину */
+        max-width: 600px; /* Ограничиваем максимальную ширину */
+        padding: 20px 15px; /* Внутренние отступы */
+        margin-top: 50px; /* Отступ от айфона */
+        background-color: #f8f8f8; /* Добавляем свой фон, чтобы не просвечивал background-image от section-one */
+        border-radius: 10px; /* Скругляем углы */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Легкая тень */
+        z-index: 1; /* Может быть не нужен, но на всякий случай */
+    }
+
+    .video__title {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .video__player {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin-top: 15px;
+        margin-left: 0;
+    }
+
+    /* Секция 2 */
+    .section-two__title {
+        font-size: 38px;
+        line-height: 1.2;
+        letter-spacing: -1%;
+        margin-top: 60px;
+        margin-bottom: 40px;
+        padding: 0 15px;
+    }
+
+    .blocks {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 20px;
+        padding: 0 15px;
+        justify-items: center;
+    }
+
+    .section-two__item {
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .item-subtitle {
+        margin-top: 24px;
+    }
+
+    .icon-arrow {
+        margin-left: auto;
+        margin-top: 10px;
+    }
+
+    /* Секция 3 */
+    .section-three {
+        padding: 40px 15px;
+        min-height: auto;
+        background-position: center top;
+    }
+
+    .section-three__title {
+        font-size: 38px;
+        line-height: 1.2;
+        letter-spacing: -1%;
+        margin-top: 40px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .prices {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .prices__card {
+        width: 90%;
+        max-width: 320px;
+        height: auto;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .card__btn {
+        padding: 14px 40px;
+        margin-top: 30px;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .end-btn {
+        margin-top: 40px;
+        margin-bottom: 50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-title__text {
+        font-size: 32px; /* Еще сильнее уменьшаем заголовок */
+    }
+    .video__title {
+        font-size: 32px;
+    }
+    .section-two__title {
+        font-size: 32px;
+    }
+    .section-three__title {
+        font-size: 32px;
+    }
+    .iphone {
+        width: 250px;
+        height: 500px;
+    }
+    .overlay-image {
+        width: 180px;
+        height: 180px;
+    }
+    .prices__card {
+        max-width: 280px; /* Для очень узких экранов, карточки могут быть еще уже */
+    }
+    .card__btn {
+        max-width: 200px; /* И кнопки тоже */
+    }
 }
