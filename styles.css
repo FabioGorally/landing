@@ -7,6 +7,7 @@
 body {
     font-family: 'Inter';
     color: #0F172A;
+    overflow-x: hidden;
 }
 
 .main {
@@ -205,7 +206,8 @@ body {
     align-items: center;
     background-color: #010101;
     background-image: url(assets/background_page3.png);
-    background-size: 1920px 525px;
+    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -258,7 +260,7 @@ body {
     margin-top: 12px;
 }
 
-.card__price-small {
+.card__price--small {
     font-size: 28px;
 }
 
