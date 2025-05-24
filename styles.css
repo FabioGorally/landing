@@ -316,6 +316,10 @@ body {
         padding: 0 15px;
     }
 
+    .background-image {
+        display: none;
+    }
+
     /* Секция 1 */
     .section-one {
         display: flex; /* Flexbox для вертикального расположения элементов */
